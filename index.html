@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ank Lab — Photo Editing</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════
+       NAVBAR
+  ════════════════════════════════════════ -->
+  <nav class="navbar">
+
+    <!-- Logo navbar — cambia src="" -->
+    <div class="nav-logo">
+      <img src="./public/PAGINA WEB/LOGOS/sticker_Portfolio.png" alt="Ank Lab"
+           data-ph="navLogoPH" />
+    </div>
+
+    <!-- Links — la font "Drunken Hour" se carga desde styles.css -->
+    <ul class="nav-links">
+      <li><a href="#">About Me</a></li>
+      <li><a href="#">Photography</a></li>
+      <li><a href="#">Social Media</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+
+  </nav>
+
+
+  <!-- ════════════════════════════════════════
+       HERO — VIDEO PRINCIPAL
+       Cambia src="" con tu video.
+  ════════════════════════════════════════ -->
+  <section class="hero">
+
+    <!-- Placeholder video -->
+    <div class="hero-ph" id="heroPH">
+      <svg width="44" height="44" viewBox="0 0 24 24" fill="#555">
+        <path d="M17 10.5V7a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-3.5l4 4v-11l-4 4z"/>
+      </svg>
+      TU_VIDEO_AQUI.mp4
+    </div>
+
+    <!-- VIDEO — cambia src="" -->
+    <video autoplay muted loop playsinline>
+      <source src="TU_VIDEO_AQUI.mp4" type="video/mp4" />
+    </video>
+
+    <div class="hero-overlay"></div>
+
+    <!-- Botón play -->
+    <div class="play-btn">
+      <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+    </div>
+
+    <!-- ── ESTRELLA IZQUIERDA — cambia src="" ── -->
+    <img src="estrellas-izq.gif" alt="" class="deco star-left" data-ph="slph" style="display:none;" />
+    <div class="ph star-left" id="slph">estrellas-izq.gif</div>
+
+    <!-- ── ESTRELLA DERECHA — cambia src="" ── -->
+    <img src="estrellas-der.gif" alt="" class="deco star-right" data-ph="srph" style="display:none;" />
+    <div class="ph star-right" id="srph">estrellas-der.gif</div>
+
+    <!-- ── IMAGEN DEL PAPEL — cambia src="" ── -->
+    <img src="papel.png" alt="papel" class="deco hero-note"
+         data-ph="notePH" style="display:none;" />
+    <div class="ph hero-note" id="notePH">papel.png</div>
+
+    <!-- ── POLAROID + DETALLE
+         La polaroid y su pequeño detalle a la derecha
+         van dentro de un mismo contenedor para moverse juntos.
+    ── -->
+    <div class="deco hero-polaroid-wrap">
+      <!-- GIF polaroid — cambia src="" -->
+      <img src="polaroid.gif" alt="polaroid" class="polaroid-img"
+           data-ph="polaroidPH" style="display:none;" />
+      <div class="ph polaroid-ph" id="polaroidPH">polaroid.gif</div>
+
+      <!-- Detalle a la derecha — cambia src="" -->
+      <img src="detalles.png" alt="detalles" class="polaroid-detail"
+           data-ph="detailsPH" style="display:none;" />
+      <div class="ph detail-ph" id="detailsPH">detalles.png</div>
+    </div>
+
+  </section>
+
+
+  <!-- ════════════════════════════════════════
+       SECTION HEADER
+  ════════════════════════════════════════ -->
+  <div class="section-header">
+
+    <!-- Logo izquierda — cambia src="" -->
+    <div class="section-logo">
+      <img src="logo-ardi.png" alt="Ardi Lab"
+           data-ph="logoArdiPH" style="display:none;" />
+      <div class="ph sec-logo-ph" id="logoArdiPH">logo-ardi.png</div>
+    </div>
+
+    <!-- Imagen título alas + PHOTO EDITING — cambia src="" -->
+    <div class="section-title">
+      <img src="titulo-alas.png" alt="Photo Editing"
+           data-ph="tituloAlasPH" style="display:none;" />
+      <div class="ph sec-title-ph" id="tituloAlasPH">titulo-alas.png</div>
+    </div>
+
+  </div>
+
+
+  <!-- ════════════════════════════════════════
+       BARRA META — edita el texto
+  ════════════════════════════════════════ -->
+  <div class="meta-bar">
+    <span>Octubre 2020</span>
+    <span>Galería de Arte Borcelle</span>
+    <span>Madrid</span>
+  </div>
+
+
+  <!-- ════════════════════════════════════════
+       GALERÍA
+       row-3 → 3 fotos iguales
+       row-2 → 2 fotos iguales
+       row-1 → 1 foto pequeña izquierda
+  ════════════════════════════════════════ -->
+  <section class="gallery">
+
+    <!-- FILA 1: 3 fotos -->
+    <div class="gallery-row row-3">
+      <div class="gallery-item">
+        <img src="foto1.jpg" alt="Foto 1" data-ph="ph1" style="display:none;" />
+        <div class="img-ph" id="ph1">foto1.jpg</div>
+      </div>
+      <div class="gallery-item">
+        <img src="foto2.jpg" alt="Foto 2" data-ph="ph2" style="display:none;" />
+        <div class="img-ph" id="ph2">foto2.jpg</div>
+      </div>
+      <div class="gallery-item">
+        <img src="foto3.jpg" alt="Foto 3" data-ph="ph3" style="display:none;" />
+        <div class="img-ph" id="ph3">foto3.jpg</div>
+      </div>
+    </div>
+
+    <!-- FILA 2: 1 foto izquierda -->
+    <div class="gallery-row row-1">
+      <div class="gallery-item">
+        <img src="foto4.jpg" alt="Foto 4" data-ph="ph4" style="display:none;" />
+        <div class="img-ph" id="ph4">foto4.jpg</div>
+      </div>
+    </div>
+
+    <!-- FILA 3: 2 fotos -->
+    <div class="gallery-row row-2">
+      <div class="gallery-item">
+        <img src="foto5.jpg" alt="Foto 5" data-ph="ph5" style="display:none;" />
+        <div class="img-ph" id="ph5">foto5.jpg</div>
+      </div>
+      <div class="gallery-item">
+        <img src="foto6.jpg" alt="Foto 6" data-ph="ph6" style="display:none;" />
+        <div class="img-ph" id="ph6">foto6.jpg</div>
+      </div>
+    </div>
+
+    <!--
+    ╔══════════════════════════════════════╗
+    ║  AÑADIR FILAS:                       ║
+    ║  row-3 → 3 fotos iguales            ║
+    ║  row-2 → 2 fotos iguales            ║
+    ║  row-1 → 1 foto pequeña izquierda   ║
+    ╚══════════════════════════════════════╝
+    -->
+
+  </section>
+
+
+  <!-- ════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════ -->
+  <footer>
+    <span>RVN Lab</span> &nbsp;·&nbsp; Galería de Arte Borcelle &nbsp;·&nbsp; Madrid
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
