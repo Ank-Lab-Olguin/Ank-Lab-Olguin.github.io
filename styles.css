@@ -1,10 +1,5 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ══════════════════════════════
-   FONT — Drunken Hour
-   Asegúrate de tener el archivo drunken-hour.woff2 (o .ttf)
-   en la misma carpeta que este CSS.
-══════════════════════════════ */
 @font-face {
   font-family: 'Drunken Hour';
   src: url('drunkenhourDEMO.otf') format('opentype'),
@@ -25,7 +20,7 @@ body {
   color: var(--text);
   font-family: 'Oswald', sans-serif;
   overflow-x: hidden;
-  max-width: 680px;
+  /* max-width: 98%; */
   margin: 0 auto;
 }
 
@@ -47,6 +42,9 @@ body {
    NAVBAR
 ══════════════════════════════ */
 .navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   background: var(--dark);
   padding: 10px 14px;
   display: flex;
@@ -58,11 +56,12 @@ body {
 
 .nav-logo img,
 .nav-logo .ph {
-  width: 70px;
-  height: 70px;
+  width: clamp(48px, 6vw, 64px);
+  height: clamp(48px, 6vw, 64px);
   object-fit: contain;
   flex-shrink: 0;
   border-radius: 50%;
+  gap: 4%;
 }
 
 .nav-links {
@@ -71,18 +70,21 @@ body {
   flex-wrap: wrap;
   gap: 8px;
   flex: 1;
-  justify-content: flex-end;
+  justify-content: space-between;
+  margin: 0 10%;
 }
 .nav-links li a {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
   padding: 6px 14px;
   border: 2px solid #e8e8e8;
   border-radius: 999px;
   color: var(--text);
   text-decoration: none;
-  /* ← DRUNKEN HOUR para los botones del nav */
   font-family: 'Drunken Hour', cursive;
-  font-size: clamp(10px, 2.4vw, 14px);
+  font-size: clamp(14px, 3vw, 18px);
   letter-spacing: 1px;
   text-transform: uppercase;
   transition: background 0.2s, color 0.2s, border-color 0.2s;
@@ -138,30 +140,6 @@ body {
   pointer-events: none;
 }
 
-/* Botón play */
-.play-btn {
-  position: absolute;
-  top: 42%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 5;
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  border: 2.5px solid rgba(255,255,255,0.75);
-  background: rgba(0,0,0,0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
-}
-.play-btn:hover {
-  background: rgba(57,255,20,0.25);
-  transform: translate(-50%,-50%) scale(1.1);
-}
-.play-btn svg { fill: white; width: 24px; height: 24px; margin-left: 3px; }
-
 /* ── Elementos decorativos sobre el hero ── */
 .deco {
   position: absolute;
@@ -172,13 +150,13 @@ body {
 /* ── ESTRELLA IZQUIERDA ──
    Ajusta top/left/width a tu gusto
 ══ */
-.star-left    { width: 22%; top: 14%; left: 2%; }
-.ph.star-left { width: 22%; aspect-ratio: 1; top: 14%; left: 2%;
+.star-left    { width: 22%; top: 35%; left: 2%; }
+.ph.star-left { width: 22%; aspect-ratio: 1; top: 35%; left: 2%;
                 position: absolute; z-index: 4; font-size: 8px; border-radius: 4px; }
 
 /* ── ESTRELLA DERECHA ── */
-.star-right    { width: 18%; top: 15%; right: 3%; }
-.ph.star-right { width: 18%; aspect-ratio: 1; top: 15%; right: 3%;
+.star-right    { width: 18%; top: 35%; right: 3%; }
+.ph.star-right { width: 18%; aspect-ratio: 1; top: 35%; right: 3%;
                  position: absolute; z-index: 4; font-size: 8px; border-radius: 4px; }
 
 /* ── PAPEL ──
@@ -196,7 +174,7 @@ body {
   position: absolute;
   z-index: 4;
   bottom: 8%;
-  right: 3%;
+  right: 4%;
   width: 32%;
   display: flex;
   align-items: flex-end;
@@ -218,9 +196,12 @@ body {
 .polaroid-detail,
 .detail-ph {
   width: 28%;
+  right: 90%;
   flex-shrink: 0;
   align-self: center;
   object-fit: contain;
+  transform: rotate(90deg);
+  margin-left: -12%;
 }
 .detail-ph { aspect-ratio: 1/2; font-size: 7px; }
 
@@ -246,6 +227,8 @@ body {
 
 .section-title {
   flex: 1;
+  height: 10rem;
+  
   display: flex;
   align-items: center;
 }
