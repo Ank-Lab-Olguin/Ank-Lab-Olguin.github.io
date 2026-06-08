@@ -228,7 +228,7 @@ body {
   flex-direction: column;
   line-height: 0.9;
   pointer-events: none;
-  z-index: 10;
+  z-index: 100;
 }
 
 .hero-about-title span {
