@@ -10,7 +10,7 @@
 
 :root {
   --green: #39ff14;
-  --dark: #060606;
+  --dark: #000000;
   --mid: #0e0e0e;
   --text: #e8e8e8;
 }
@@ -20,8 +20,11 @@ body {
   color: var(--text);
   font-family: 'Oswald', sans-serif;
   overflow-x: hidden;
-  /* max-width: 98%; */
   margin: 0 auto;
+}
+
+.spacer {
+  height: 10vw;
 }
 
 /* ── Placeholder genérico ── */
@@ -42,22 +45,23 @@ body {
    NAVBAR
 ══════════════════════════════ */
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 10;
-  background: var(--dark);
+  width: 100%;
+  background-color: transparent;
+  z-index: 1000;
   padding: 10px 14px;
   display: flex;
   align-items: center;
   gap: 10px;
-  border-bottom: 1px solid #1a1a1a;
+  
   flex-wrap: wrap;
 }
 
 .nav-logo img,
 .nav-logo .ph {
-  width: clamp(48px, 6vw, 64px);
-  height: clamp(48px, 6vw, 64px);
+  width: clamp(5vw, 11vw, 11vw);
+  height: clamp(5vw, 11vw, 11vw);
   object-fit: contain;
   flex-shrink: 0;
   border-radius: 50%;
@@ -87,6 +91,8 @@ body {
   font-size: clamp(14px, 3vw, 18px);
   letter-spacing: 1px;
   text-transform: uppercase;
+  background: rgba(0,0,0,0.6);
+
   transition: background 0.2s, color 0.2s, border-color 0.2s;
   white-space: nowrap;
 }
@@ -196,7 +202,7 @@ body {
 /* ── PAPEL ──
    Ajusta posición y tamaño a tu imagen
 ══ */
-.hero-note    { width: 46%; bottom: 12%; left: 7%; transform: rotate(-1.5deg); }
+.hero-note    { width: 46%; bottom: 12%; left: 30vw; transform: rotate(-1.5deg); }
 .ph.hero-note { width: 46%; aspect-ratio: 3/3.6; bottom: 12%; left: 7%;
                 position: absolute; z-index: 4; transform: rotate(-1.5deg); }
 
@@ -208,7 +214,7 @@ body {
   position: absolute;
   z-index: 4;
   bottom: 8%;
-  right: 4%;
+  right: 0.5vw;
   width: 32%;
   display: flex;
   align-items: flex-end;
@@ -219,7 +225,7 @@ body {
 .polaroid-img,
 .polaroid-ph {
   flex: 1;
-  width: 100%;
+  width: 80%;
   aspect-ratio: 3 / 4;
   transform: rotate(3deg);
   object-fit: contain;
@@ -230,7 +236,7 @@ body {
 .polaroid-detail,
 .detail-ph {
   width: 28%;
-  right: 90%;
+  right: 1vw;
   flex-shrink: 0;
   align-self: center;
   object-fit: contain;
@@ -245,35 +251,67 @@ body {
 .section-header {
   background: var(--dark);
   padding: 14px 16px 10px;
-  display: flex;
+  display: grid;
   align-items: center;
   gap: 14px;
+  grid-template-columns: 1fr auto 1fr;
+  position: relative;
+  justify-items: flex-end;
+
 }
+
 
 .section-logo img,
 .sec-logo-ph {
-  width: 78px;
-  height: 78px;
+  width: 10vw;
+  height: 10vw;
   object-fit: contain;
   flex-shrink: 0;
-  border-radius: 50%;
+  border-radius: 10%;
+  align-items: center;
+  z-index: 2;
+  justify-self: center;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  grid-column: 3;
 }
 
 .section-title {
   flex: 1;
-  height: 10rem;
-  
+  height: 10vw;
   display: flex;
   align-items: center;
+  justify-content: center;
+  justify-self: center;
+  grid-column: 2;
+
 }
 .section-title img {
-  max-width: 100%;
-  height: auto;
+  height: 10vw;
   object-fit: contain;
 }
 .sec-title-ph {
   flex: 1;
   height: 64px;
+}
+
+@media (max-width: 640px) {
+  .section-header {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .section-logo {
+    justify-self: center;
+    align-self: center;
+    align-items: center;
+  }
+
+  .section-title img {
+    max-width: 90%;
+  }
 }
 
 /* ══════════════════════════════
@@ -374,3 +412,341 @@ footer {
   color: #3a3a3a;
 }
 footer span { color: var(--green); }
+
+
+/* ══════════════════════════════════════════════
+   MACHETE GIRL COLLAB
+══════════════════════════════════════════════ */
+.collab {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+
+.collab-bg {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 10;
+}
+
+/* ── CSS Grid: 4 cols, 2 filas ──
+   "title  b     c     d"
+   "title  e     f     d"
+   donde d es la foto alta (span 2 filas)
+   y title es el título (span 2 filas)
+══ */
+.collab-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "title  b    c    d"
+    "title  e    f    d";
+  gap: 6px;
+  padding: 16px;
+}
+
+/* Cada celda */
+.collab-cell {
+  position: relative;
+  overflow: hidden;
+  background: #181818;
+  border: 2px dashed #2e2e2e;
+  min-height: 0;
+}
+.collab-cell img:not(.collab-brain) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Asignación de áreas */
+.cell-title { grid-area: title; background: transparent; border: none;
+              display: flex; align-items: center; }
+.cell-b     { grid-area: b;     aspect-ratio: 2/3; }
+.cell-c     { grid-area: c;     aspect-ratio: 2/3; }
+.cell-d     { grid-area: d;     /* span 2 filas automático por grid-area */ }
+.cell-e     { grid-area: e;     aspect-ratio: 2/3; }
+.cell-f     { grid-area: f;     aspect-ratio: 2/3; }
+.cell-desc  { grid-area: f;     background: rgba(0,0,0,0.5);
+              display: flex; flex-direction: column;
+              align-items: flex-start; justify-content: flex-end;
+              gap: 6px; padding: 10px; aspect-ratio: 2/3; }
+
+/* foto 3 alta — ocupa el alto de las 2 filas */
+.cell-d {
+  grid-row: span 2;
+}
+
+/* ── Título ── */
+.collab-title {
+  font-family: 'Drunken Hour', cursive;
+  font-size: clamp(22px, 5.5vw, 42px);
+  color: var(--text);
+  line-height: 1.0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* ── Ícono cerebro ── */
+.collab-brain {
+  width: clamp(18px, 4vw, 28px);
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.collab-brain[src="icono-cerebro.png"] {
+  min-width: 24px; min-height: 24px;
+  background: #222; border: 2px dashed #333; border-radius: 4px; display: block;
+}
+
+/* ── Descripción ── */
+.collab-desc {
+  font-size: clamp(9px, 2vw, 12px);
+  color: #ccc;
+  line-height: 1.5;
+}
+
+/* Placeholder img-ph dentro de celdas */
+.collab-cell .img-ph {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #3a3a3a;
+  font-size: 10px;
+  background: #181818;
+  padding: 8px;
+}
+
+
+/* ══════════════════════════════════════════════
+   SOCIAL MEDIA
+══════════════════════════════════════════════ */
+.social {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #0d0d0d;
+}
+
+.social-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.85;
+}
+
+.social-content {
+  position: relative;
+  z-index: 1;
+  padding: 28px 16px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Título Social Media ── */
+.social-title {
+  font-family: 'Drunken Hour', cursive;
+  font-size: clamp(30px, 9vw, 58px);
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.social-body {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+/* Columna izquierda */
+.social-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Estrellas decorativas — imagen */
+.social-stars {
+  width: 35%;
+  object-fit: contain;
+  align-self: flex-end;
+}
+/* Placeholder estrellas */
+.social-stars[src="estrellas-social.png"] {
+  min-height: 60px;
+  background: #181818;
+  border: 2px dashed #2e2e2e;
+  display: block;
+}
+
+/* Post Instagram — imagen */
+.social-post {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+  border: 2px dashed #2e2e2e;
+  background: #181818;
+}
+
+/* Columna derecha */
+.social-right {
+  flex: 0 0 46%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+}
+
+/* Celular mockup — imagen */
+.social-phone {
+  width: 100%;
+  object-fit: contain;
+  display: block;
+}
+/* Placeholder celular */
+.social-phone[src="celular-mockup.png"] {
+  aspect-ratio: 9 / 16;
+  background: #181818;
+  border: 2px dashed #2e2e2e;
+}
+
+/* ── Formato: texto editable ── */
+.social-formato {
+  align-self: flex-start;
+  color: var(--text);
+  font-size: clamp(13px, 3vw, 16px);
+}
+.formato-title {
+  font-family: 'Drunken Hour', cursive;
+  font-size: clamp(16px, 4vw, 22px);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.social-formato ul {
+  list-style: disc;
+  padding-left: 18px;
+  line-height: 1.8;
+}
+
+
+/* ══════════════════════════════════════════════
+   CONTACT
+══════════════════════════════════════════════ */
+.contact {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #0a0a0a;
+  min-height: 320px;
+}
+
+.contact-bg {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 10;
+}
+
+.contact-content {
+  position: relative;
+  z-index: 1;
+  padding: 28px 16px 36px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+/* Columna izquierda: título + dibujo */
+.contact-left {
+  flex: 0 0 42%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ── Título Contact ── */
+.contact-title {
+  font-family: 'Drunken Hour', cursive;
+  font-size: clamp(30px, 9vw, 58px);
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Dibujo/ilustración — imagen */
+.contact-drawing {
+  width: 100%;
+  object-fit: contain;
+  display: block;
+}
+/* Placeholder dibujo */
+.contact-drawing[src="dibujo-contact.png"] {
+  aspect-ratio: 3 / 4;
+  background: #181818;
+  border: 2px dashed #2e2e2e;
+  min-height: 160px;
+}
+
+/* Columna derecha: íconos + handles */
+.contact-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 20px;
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Ícono imagen */
+.contact-icon {
+  width: clamp(24px, 6vw, 36px);
+  height: clamp(24px, 6vw, 36px);
+  object-fit: contain;
+  flex-shrink: 0;
+}
+/* Placeholder íconos */
+.contact-icon[src="icono-ig.png"],
+.contact-icon[src="icono-email.png"] {
+  background: #1e1e1e;
+  border: 2px dashed #333;
+  border-radius: 4px;
+}
+
+/* ── Handles — texto editable ── */
+.contact-handle {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(14px, 3.5vw, 20px);
+  color: var(--text);
+  letter-spacing: 1px;
+  font-style: italic;
+}
+
+
+/* ══════════════════════════════════════════════
+   SCROLL SUAVE + OFFSET NAVBAR
+══════════════════════════════════════════════ */
+html { scroll-behavior: smooth; }
+section[id], div[id] { scroll-margin-top: 90px; }

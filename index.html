@@ -12,147 +12,114 @@
        NAVBAR
   ════════════════════════════════════════ -->
   <nav class="navbar">
-
-    <!-- Logo navbar — cambia src="" -->
     <div class="nav-logo">
-      <img src="./public/PAGINA WEB/LOGOS/sticker_Portfolio.png" alt="Ank Lab"
-           data-ph="navLogoPH" />
+      <img src="./public/PAGINA WEB/LOGOS/sticker_Portfolio.png" alt="Ank Lab" data-ph="navLogoPH" />
     </div>
-
-    <!-- Links — la font "Drunken Hour" se carga desde styles.css -->
     <ul class="nav-links">
-      <li><a href="#">About Me</a></li>
-      <li><a href="#">Photography</a></li>
-      <li><a href="#">Social Media</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#Photos">Photography</a></li>
+      <li><a href="#social">Social Media</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
-
   </nav>
 
 
   <!-- ════════════════════════════════════════
-       HERO — VIDEO PRINCIPAL
-       Cambia src="" con tu video.
+       HERO — id="about"
   ════════════════════════════════════════ -->
-  <section class="hero">
-
-    
-
-    <!-- VIDEO — cambia src="" -->
+  <section class="hero" >
     <video autoplay muted loop playsinline>
       <source src="public/PAGINA WEB/VIDEOS/Payasas_Fondo.mp4" type="video/mp4" />
     </video>
-
     <div class="hero-overlay"></div>
-
-    <!-- ── ESTRELLA IZQUIERDA — cambia src="" ── -->
-    <img src="./public/PAGINA WEB/VIDEOS/Elementos/Estrella_IZQ.gif" alt="" class="deco star-left" data-ph="slph" />
-
-    <!-- ── ESTRELLA DERECHA — cambia src="" ── -->
-    <img src="./public/PAGINA WEB/VIDEOS/Elementos/Estrella_DER.gif" alt="" class="deco star-right" data-ph="srph" />
-
-    <!-- ── IMAGEN DEL PAPEL — cambia src="" ── -->
-    <img src="./public/PAGINA WEB/Elementos/Diseño sin título/papel.png" alt="papel" class="deco hero-note"
-         data-ph="notePH"  />
-
-    <!-- ── POLAROID + DETALLE
-         La polaroid y su pequeño detalle a la derecha
-         van dentro de un mismo contenedor para moverse juntos.
-    ── -->
+    <img src="./public/PAGINA WEB/VIDEOS/Elementos/Estrella_IZQ.gif" alt="" class="deco star-left" />
+    <img src="./public/PAGINA WEB/VIDEOS/Elementos/Estrella_DER.gif" alt="" class="deco star-right" />
+    <img src="./public/PAGINA WEB/Elementos/ank olguin.png" alt="papel" class="deco hero-note" id="about"/>
     <div class="deco hero-polaroid-wrap">
-      <!-- GIF polaroid — cambia src="" -->
-      <img src="./public/PAGINA WEB/VIDEOS/Elementos/Polaroid_Video.gif" alt="polaroid" class="polaroid-img"
-           data-ph="polaroidPH" />
-
-      <!-- Detalle a la derecha — cambia src="" -->
+      <img src="./public/PAGINA WEB/VIDEOS/Elementos/Polaroid_Video.gif" alt="polaroid" class="polaroid-img" />
       <img src="./public/PAGINA WEB/Elementos/Diseño sin título/detalle.png" alt="detalles" class="polaroid-detail" />
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════
+       SECTION HEADER — Photography
+  ════════════════════════════════════════ -->
+  <div class="section-header" id="Photos">
+    <div class="section-title">
+      <img src="./public/PAGINA WEB/Elementos/Alas texto.png" alt="Photo Editing" />
+    </div>
+    <div class="section-logo">
+      <img src="./public/PAGINA WEB/LOGOS/Portafolio_Moodboard.png" alt="Ank Lab" />
+    </div>
+  </div>
+
+
+    <!-- Fondo textura gris — cambia src="" -->
+    <img src="./public/PAGINA WEB/Elementos/machete collab.png" alt="" class="collab-bg" />
+
+
+
+  </section>
+
+
+  <!-- ════════════════════════════════════════
+       SOCIAL MEDIA — id="social"
+       Fondo papel → imagen
+       Post Instagram, celular, estrellas → imágenes
+       Título y "Formato" → texto editable
+  ════════════════════════════════════════ -->
+  <section class="social" id="social">
+
+    <!-- Fondo papel arrugado — cambia src="" -->
+    <img src="fondo-papel.png" alt="" class="social-bg" />
+
+    <div class="social-content">
+
+      <!-- ── TÍTULO — texto editable ── -->
+      <h2 class="social-title">Social Media</h2>
+
+      <div class="social-body">
+
+        <!-- Columna izquierda: estrellas + post instagram -->
+        <div class="social-left">
+          <!-- Estrellas decorativas — cambia src="" -->
+          <img src="estrellas-social.png" alt="" class="social-stars" />
+          <!-- Screenshot post Instagram — cambia src="" -->
+          <img src="post-instagram.png" alt="Instagram post" class="social-post" />
+        </div>
+
+        <!-- Columna derecha: celular + formato -->
+        <div class="social-right">
+          <!-- Celular mockup — cambia src="" -->
+          <img src="celular-mockup.png" alt="Celular" class="social-phone" />
+          <!-- ── FORMATO — texto editable ── -->
+          <div class="social-formato">
+            <p class="formato-title">Formato:</p>
+            <ul>
+              <li>Post</li>
+              <li>Reels</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
     </div>
 
   </section>
 
 
   <!-- ════════════════════════════════════════
-       SECTION HEADER
+       CONTACT — id="contact"
+       Dientes, símbolos y dibujo → imágenes
+       Título e IDs de cuentas → texto editable
   ════════════════════════════════════════ -->
-  <div class="section-header">
+  <section class="contact" id="contact">
 
-    <!-- Logo izquierda — cambia src="" -->
-    <div class="section-logo">
-      <img src="./public/PAGINA WEB/LOGOS/Portafolio_Moodboard.png" alt="Ardi Lab"
-           data-ph="logoArdiPH" />
-    </div>
+    <!-- Fondo dientes — cambia src="" -->
+    <img src="./public/PAGINA WEB/Elementos/Contact.png" alt="" class="contact-bg" />
 
-    <!-- Imagen título alas + PHOTO EDITING — cambia src="" -->
-    <div class="section-title">
-      <img src="./public/PAGINA WEB/Elementos/Alas texto.png" alt="Photo Editing"
-           data-ph="tituloAlasPH" />
-    </div>
-
-  </div>
-
-
-  <!-- ════════════════════════════════════════
-       BARRA META — edita el texto
-  ════════════════════════════════════════ -->
-  <div class="meta-bar">
-    <span>Octubre 2020</span>
-    <span>Galería de Arte Borcelle</span>
-    <span>Madrid</span>
-  </div>
-
-
-  <!-- ════════════════════════════════════════
-       GALERÍA
-       row-3 → 3 fotos iguales
-       row-2 → 2 fotos iguales
-       row-1 → 1 foto pequeña izquierda
-  ════════════════════════════════════════ -->
-  <section class="gallery">
-
-    <!-- FILA 1: 3 fotos -->
-    <div class="gallery-row row-3">
-      <div class="gallery-item">
-        <img src="foto1.jpg" alt="Foto 1" data-ph="ph1" style="display:none;" />
-        <div class="img-ph" id="ph1">foto1.jpg</div>
-      </div>
-      <div class="gallery-item">
-        <img src="foto2.jpg" alt="Foto 2" data-ph="ph2" style="display:none;" />
-        <div class="img-ph" id="ph2">foto2.jpg</div>
-      </div>
-      <div class="gallery-item">
-        <img src="foto3.jpg" alt="Foto 3" data-ph="ph3" style="display:none;" />
-        <div class="img-ph" id="ph3">foto3.jpg</div>
-      </div>
-    </div>
-
-    <!-- FILA 2: 1 foto izquierda -->
-    <div class="gallery-row row-1">
-      <div class="gallery-item">
-        <img src="foto4.jpg" alt="Foto 4" data-ph="ph4" style="display:none;" />
-        <div class="img-ph" id="ph4">foto4.jpg</div>
-      </div>
-    </div>
-
-    <!-- FILA 3: 2 fotos -->
-    <div class="gallery-row row-2">
-      <div class="gallery-item">
-        <img src="foto5.jpg" alt="Foto 5" data-ph="ph5" style="display:none;" />
-        <div class="img-ph" id="ph5">foto5.jpg</div>
-      </div>
-      <div class="gallery-item">
-        <img src="foto6.jpg" alt="Foto 6" data-ph="ph6" style="display:none;" />
-        <div class="img-ph" id="ph6">foto6.jpg</div>
-      </div>
-    </div>
-
-    <!--
-    ╔══════════════════════════════════════╗
-    ║  AÑADIR FILAS:                       ║
-    ║  row-3 → 3 fotos iguales            ║
-    ║  row-2 → 2 fotos iguales            ║
-    ║  row-1 → 1 foto pequeña izquierda   ║
-    ╚══════════════════════════════════════╝
-    -->
 
   </section>
 
