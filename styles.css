@@ -228,7 +228,7 @@ body {
   flex-direction: column;
   line-height: 0.9;
   pointer-events: none;
-  z-index: 10;
+  z-index: 100;
 }
 
 .hero-about-title span {
@@ -287,6 +287,15 @@ body {
   min-height: 12vw;
 }
 
+
+.section-wings {
+  height: 20vw;
+  object-fit: contain;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
 .section-title {
   position: absolute;
   left: 50%;
@@ -303,7 +312,8 @@ body {
 }
 
 .section-logo {
-  margin-left: auto;
+  position:absolute;
+  right: 4vw;
 }
 
 .section-logo img,
@@ -314,6 +324,25 @@ body {
   border-radius: 10%;
   display: block;
 }
+.section-title-wrap {
+  position: relative;        /* contexto para el absolute */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.section-title-wrap image,
+.section-title-wrap img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 8vw;              /* ajusta al tamaño que quieras */
+  object-fit: contain;
+  z-index: 2;
+  pointer-events: none;
+}
+
+
 
 @media (max-width: 640px) {
   .section-header {
@@ -460,6 +489,7 @@ footer span { color: var(--green); }
   height: 100%;
   object-fit: cover;
   z-index: 10;
+  margin-bottom: -21vw; 
 }
 
 /* ── CSS Grid: 4 cols, 2 filas ──
@@ -563,24 +593,22 @@ footer span { color: var(--green); }
 .social {
   position: relative;
   width: 100%;
-  overflow: hidden;
-  background: #0d0d0d;
+  background: transparent;
 }
 
 .social-bg {
-  position: absolute;
-  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 0;
-  opacity: 0.85;
+  z-index: 100;
+  background: transparent;
+  margin-bottom: -14vw; 
+
 }
 
 .social-content {
   position: relative;
-  z-index: 1;
-  padding: 28px 16px 36px;
+  z-index: 11;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -601,58 +629,16 @@ footer span { color: var(--green); }
   align-items: flex-start;
 }
 
-/* Columna izquierda */
-.social-left {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
 
-/* Estrellas decorativas — imagen */
-.social-stars {
-  width: 35%;
-  object-fit: contain;
-  align-self: flex-end;
-}
-/* Placeholder estrellas */
-.social-stars[src="estrellas-social.png"] {
-  min-height: 60px;
-  background: #181818;
-  border: 2px dashed #2e2e2e;
-  display: block;
-}
-
-/* Post Instagram — imagen */
-.social-post {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  display: block;
-  border: 2px dashed #2e2e2e;
-  background: #181818;
-}
-
-/* Columna derecha */
-.social-right {
-  flex: 0 0 46%;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  align-items: center;
-}
-
-/* Celular mockup — imagen */
 .social-phone {
-  width: 100%;
+  position: absolute;
+  right: 2%;
+  top: 22%;
+  width: 48%;
   object-fit: contain;
-  display: block;
-}
-/* Placeholder celular */
-.social-phone[src="celular-mockup.png"] {
-  aspect-ratio: 9 / 16;
-  background: #181818;
-  border: 2px dashed #2e2e2e;
+  transform: rotate(5deg);
+  z-index: 10;
+  margin-right: -7vw;
 }
 
 /* ── Formato: texto editable ── */
@@ -682,7 +668,7 @@ footer span { color: var(--green); }
   position: relative;
   width: 100%;
   overflow: hidden;
-  background: #0a0a0a;
+  background: transparent;
   min-height: 320px;
 }
 
