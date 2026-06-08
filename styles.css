@@ -202,7 +202,7 @@ body {
 /* ── PAPEL ──
    Ajusta posición y tamaño a tu imagen
 ══ */
-.hero-note    { width: 46%; bottom: 12%; left: 30vw; transform: rotate(-1.5deg); }
+.hero-note    { width: 50%; bottom: 12%; left: 25vw; transform: rotate(-1.5deg); }
 .ph.hero-note { width: 46%; aspect-ratio: 3/3.6; bottom: 12%; left: 7%;
                 position: absolute; z-index: 4; transform: rotate(-1.5deg); }
 
@@ -219,6 +219,34 @@ body {
   display: flex;
   align-items: flex-end;
   gap: 0;
+}
+/* ── TÍTULO ABOUT ME ── */
+.hero-about-title {
+  left: 10vw;
+  bottom: 20%;
+  display: flex;
+  flex-direction: column;
+  line-height: 0.9;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.hero-about-title span {
+  font-family: 'Drunken Hour';
+  font-size: clamp(28px, 9vw, 64px);
+  color: var(--text);
+  text-transform: lowercase;
+  letter-spacing: 2px;
+}
+
+.hero-about-title span:first-child {
+  font-size: clamp(22px, 7vw, 52px);
+}
+
+/* La "T" y "U" en bloque tipo display — efecto de la imagen */
+.hero-about-title span:last-child {
+  font-size: clamp(32px, 11vw, 78px);
+  color: var(--text);
 }
 
 /* La polaroid ocupa la mayor parte */
@@ -241,7 +269,8 @@ body {
   align-self: center;
   object-fit: contain;
   transform: rotate(90deg);
-  margin-left: -12%;
+  margin-left: 10vw;
+  z-index: 10;
 }
 .detail-ph { aspect-ratio: 1/2; font-size: 7px; }
 
@@ -251,66 +280,67 @@ body {
 .section-header {
   background: var(--dark);
   padding: 14px 16px 10px;
-  display: grid;
+  display: flex;
   align-items: center;
-  gap: 14px;
-  grid-template-columns: 1fr auto 1fr;
+  justify-content: center;
   position: relative;
-  justify-items: flex-end;
-
+  min-height: 12vw;
 }
 
+.section-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 10vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-title img {
+  height: 10vw;
+  object-fit: contain;
+}
+
+.section-logo {
+  margin-left: auto;
+}
 
 .section-logo img,
 .sec-logo-ph {
   width: 10vw;
   height: 10vw;
   object-fit: contain;
-  flex-shrink: 0;
   border-radius: 10%;
-  align-items: center;
-  z-index: 2;
-  justify-self: center;
-  align-self: center;
-  justify-content: center;
-  align-items: center;
-  grid-column: 3;
-}
-
-.section-title {
-  flex: 1;
-  height: 10vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  justify-self: center;
-  grid-column: 2;
-
-}
-.section-title img {
-  height: 10vw;
-  object-fit: contain;
-}
-.sec-title-ph {
-  flex: 1;
-  height: 64px;
+  display: block;
 }
 
 @media (max-width: 640px) {
   .section-header {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 10px;
-    text-align: center;
+    min-height: unset;
+    padding: 16px;
   }
 
-  .section-logo {
-    justify-self: center;
-    align-self: center;
-    align-items: center;
+  .section-title {
+    position: static;
+    transform: none;
+    height: auto;
   }
 
   .section-title img {
     max-width: 90%;
+    height: auto;
+  }
+
+  .section-logo {
+    margin-left: 0;
+  }
+
+  .section-logo img {
+    width: 20vw;
+    height: 20vw;
   }
 }
 
