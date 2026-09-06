@@ -777,7 +777,7 @@ footer span { color: var(--green); }
   height: 100%;
   object-fit: cover;
   z-index: 10;
-  margin-bottom: -1.5vw; /* ajusta este valor para cerrar la línea con Contact */
+  transform: translateY(1.5vw); /* mueve la imagen hacia abajo visualmente */
 }
 
 
