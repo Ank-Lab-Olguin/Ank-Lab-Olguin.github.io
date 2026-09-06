@@ -12,4 +12,16 @@ if (video && heroPH) {
   });
 }
 
+document.body.classList.add('loading');
+
+window.addEventListener('load', () => {
+  const loader = document.getElementById('loader');
+  document.body.classList.remove('loading');
+  loader.classList.add('loader-hidden');
+
+  // lo quita del DOM después de la transición, opcional
+  setTimeout(() => {
+    loader.remove();
+  }, 600);
+});
 

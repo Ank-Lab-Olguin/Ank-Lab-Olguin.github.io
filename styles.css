@@ -781,6 +781,65 @@ footer span { color: var(--green); }
 
 }
 
+/* ══════════════════════════════════════════════
+   LOADER
+══════════════════════════════════════════════ */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: var(--dark);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#loader.loader-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader-logo {
+  width: 22vw;
+  max-width: 120px;
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+.loader-bar {
+  width: 50vw;
+  max-width: 220px;
+  height: 4px;
+  background: #1a1a1a;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.loader-bar-fill {
+  height: 100%;
+  width: 40%;
+  background: var(--green);
+  border-radius: 999px;
+  animation: loading-slide 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.08); opacity: 0.7; }
+}
+
+@keyframes loading-slide {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(350%); }
+}
+
+/* Evita scroll mientras carga */
+body.loading {
+  overflow: hidden;
+}
 
 /* ══════════════════════════════════════════════
    SCROLL SUAVE + OFFSET NAVBAR
