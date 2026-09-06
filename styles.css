@@ -760,6 +760,26 @@ footer span { color: var(--green); }
   font-style: italic;
 }
 
+/* ══════════════════════════════════════════════
+   ALBUMS
+══════════════════════════════════════════════ */
+.albums {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: transparent;
+  min-height: 320px;
+}
+
+.albums-bg {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 10;
+  margin-bottom: -1.5vw; /* ajusta este valor para cerrar la línea con Contact */
+}
+
 
 /* ══════════════════════════════════════════════
    SCROLL SUAVE + OFFSET NAVBAR
