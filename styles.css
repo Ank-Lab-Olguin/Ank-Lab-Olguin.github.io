@@ -787,6 +787,8 @@ footer span { color: var(--green); }
 #loader {
   position: fixed;
   inset: 0;
+  height: 100dvh;      /* dvh = altura visible real, se ajusta a la UI del navegador */
+  width: 100vw;
   background: var(--dark);
   z-index: 9999;
   display: flex;
@@ -795,6 +797,25 @@ footer span { color: var(--green); }
   justify-content: center;
   gap: 20px;
   transition: opacity 0.5s ease, visibility 0.5s ease;
+  padding: 5vh 5vw;        /* margen de seguridad para que nada toque los bordes */
+  box-sizing: border-box;
+}
+
+.loader-logo {
+  width: 22vw;
+  max-width: 90px;      /* bajamos el tope para mobile */
+  min-width: 50px;
+  height: auto;
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+.loader-bar {
+  width: 60vw;
+  max-width: 200px;
+  height: 4px;
+  background: #1a1a1a;
+  border-radius: 999px;
+  overflow: hidden;
 }
 
 #loader.loader-hidden {
@@ -803,20 +824,7 @@ footer span { color: var(--green); }
   pointer-events: none;
 }
 
-.loader-logo {
-  width: 22vw;
-  max-width: 120px;
-  animation: pulse 1.4s ease-in-out infinite;
-}
 
-.loader-bar {
-  width: 50vw;
-  max-width: 220px;
-  height: 4px;
-  background: #1a1a1a;
-  border-radius: 999px;
-  overflow: hidden;
-}
 
 .loader-bar-fill {
   height: 100%;
